@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -20,14 +22,26 @@ public class ChatClient extends Frame{
 		
 		// 添加关闭窗口的功能
 		this.addWindowListener(new WindowAdapter() {
-
 			@Override
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
-			
 		});
 		
+		// 添加发送消息的功能
+		// Send Message
+		txText.addActionListener(new TFListener());
+		
 		this.setVisible(true);
+	}
+	
+	private class TFListener implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String s = txText.getText().trim();
+			
+			taContent.setText(s);
+			txText.setText("");
+		}
 	}
 }

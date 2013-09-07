@@ -4,5 +4,5 @@ It is a simple chat tool created by Java GUI.
 这是我跟着马士兵的视频教程学习时的一个项目例子。
 是一个简单的在线聊天工具。
 
-
----添加关闭窗口的功能
+0002---Send message function. 添加发送消息的功能，响应输入框的回车事件。
+0001---Close window function. 添加关闭窗口的功能。
