@@ -1,5 +1,5 @@
-This is a project during my study time with video lectures by ShiBing Ma.
+ï»¿This is a project during my study time with video lectures by ShiBing Ma.
 It is a simple chat tool created by Java GUI.
 
-ÕâÊÇÎÒ¸ú×ÅÂíÊ¿±øµÄÊÓÆµ½Ì³ÌÑ§Ï°Ê±µÄÒ»¸öÏîÄ¿Àı×Ó¡£
-ÊÇÒ»¸ö¼òµ¥µÄÔÚÏßÁÄÌì¹¤¾ß¡£
+è¿™æ˜¯æˆ‘è·Ÿç€é©¬å£«å…µçš„è§†é¢‘æ•™ç¨‹å­¦ä¹ æ—¶çš„ä¸€ä¸ªé¡¹ç›®ä¾‹å­ã€‚
+æ˜¯ä¸€ä¸ªç®€å•çš„åœ¨çº¿èŠå¤©å·¥å…·ã€‚
