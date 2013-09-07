@@ -1,18 +1,21 @@
 import java.awt.*;
 
 public class ChatClient extends Frame{
-
-	/**
-	 * @param args
-	 */
+	TextField txText = new TextField();
+	TextArea taContent = new TextArea();
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		new ChatClient().LaunchFrame();
 	}
 
 	public void LaunchFrame() {
 		this.setLocation(400, 300);
 		this.setSize(300, 300);
+		
+		this.add(txText, BorderLayout.SOUTH);
+		this.add(taContent, BorderLayout.NORTH);
+		this.pack();
+		
 		this.setVisible(true);
 	}
 }
