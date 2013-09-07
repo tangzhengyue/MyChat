@@ -18,7 +18,7 @@ public class ChatClient extends Frame{
 		this.add(taContent, BorderLayout.NORTH);
 		this.pack();
 		
-		// Ìí¼Ó¹Ø±Õ´°¿ÚµÄ¹¦ÄÜ
+		// æ·»åŠ å…³é—­çª—å£çš„åŠŸèƒ½
 		this.addWindowListener(new WindowAdapter() {
 
 			@Override
