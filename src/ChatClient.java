@@ -1,7 +1,11 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+import java.net.Socket;
 
 public class ChatClient extends Frame{
+	private static final long serialVersionUID = 1L;
+	
 	TextField txText = new TextField();
 	TextArea taContent = new TextArea();
 	
@@ -30,6 +34,19 @@ public class ChatClient extends Frame{
 		txText.addActionListener(new TFListener());
 		
 		this.setVisible(true);
+	
+		// 连接到服务端
+		// Connect to server
+		Connect();
+	}
+	
+	public void Connect(){
+		try {
+			Socket ss = new Socket("192.168.1.90", 8888);
+			System.out.println("Connected!");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private class TFListener implements ActionListener {
