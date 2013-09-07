@@ -1,10 +1,12 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 
 public class ChatClient extends Frame{
 	private static final long serialVersionUID = 1L;
+	
+	Socket socket;
 	
 	TextField txText = new TextField();
 	TextArea taContent = new TextArea();
@@ -42,7 +44,7 @@ public class ChatClient extends Frame{
 	
 	public void Connect(){
 		try {
-			Socket ss = new Socket("192.168.1.90", 8888);
+			socket = new Socket("192.168.1.90", 8888);
 			System.out.println("Connected!");
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -52,10 +54,20 @@ public class ChatClient extends Frame{
 	private class TFListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			String s = txText.getText().trim();
+			String str = txText.getText().trim();
 			
-			taContent.setText(s);
+			taContent.setText(str);
 			txText.setText("");
+			
+			try {
+				DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+				dos.writeUTF(str);
+				dos.flush();
+				dos.close();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			
 		}
 	}
 }
