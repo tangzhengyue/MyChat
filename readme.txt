@@ -4,6 +4,7 @@ It is a simple chat tool created by Java GUI.
 这是我跟着马士兵的视频教程学习时的一个项目例子。
 是一个简单的在线聊天工具。
 
+0008---MultiThread to support multi-client. 添加多线程，以支持多个客户端连接。
 0007---Client closed, Server throw exception. 修改客户端关闭后，服务器端抛出异常的问题。
 0006---Client send more than one message. 修正客户端发送第二条消息时抛出异常的问题。
 0005---Client send a message to server, server receive the message. 

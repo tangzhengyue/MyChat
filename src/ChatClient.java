@@ -6,8 +6,8 @@ import java.net.Socket;
 public class ChatClient extends Frame{
 	private static final long serialVersionUID = 1L;
 	
-	Socket socket;
-	DataOutputStream dos;
+	Socket socket = null;
+	DataOutputStream dos = null;
 	
 	TextField txText = new TextField();
 	TextArea taContent = new TextArea();
