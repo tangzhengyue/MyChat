@@ -5,26 +5,52 @@ public class ChatServer {
 	public static void main(String[] args) {
 		boolean bIsStarted = false;
 		
+		ServerSocket ss = null;
+		Socket socket = null;
+		DataInputStream dis = null;
+		
 		try {
-			ServerSocket ss = new ServerSocket(8888);
+			ss = new ServerSocket(8888);
+		}
+		catch (BindException e) {
+			System.out.println("端口正在使用中，请关掉相关程序！");
+			System.exit(0);
+		}
+		catch (IOException e1) {
+			e1.printStackTrace();
+		}
+			
+		try {
 			bIsStarted = true;
 			
 			while(bIsStarted){
-				Socket socket = ss.accept();
+				socket = ss.accept();
 				System.out.println("a client connected!");
 				
 				boolean bIsconnected = true;
-				DataInputStream dis = new DataInputStream(socket.getInputStream());
+				dis = new DataInputStream(socket.getInputStream());
 				
 				while(bIsconnected) {
 					String str = dis.readUTF();
 					System.out.println(str);
 				}
-				
-				dis.close();
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+		}
+		finally {
+			try {
+				if (dis != null) {
+					dis.close();
+				}
+				
+				if (socket != null) {
+					socket.close();
+				}
+				
+				System.out.println("Client disconnected!");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

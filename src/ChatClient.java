@@ -51,7 +51,7 @@ public class ChatClient extends Frame{
 			
 			dos = new DataOutputStream(socket.getOutputStream());
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Client disconnected!");
 		}
 	}
 	
